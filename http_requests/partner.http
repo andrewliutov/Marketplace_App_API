@@ -1,0 +1,28 @@
+### Получить статус партнера
+GET   http://localhost:8000/api/v1/partner/state/3/
+Content-Type: application/json
+Authorization: Token 312we173f36a037d9f7aba350de2d6656hf04ncx
+
+
+### Обновления статуса партнера
+PATCH  http://localhost:8000/api/v1/partner/state/3/
+Content-Type: application/json
+Authorization: Token 312we173f36a037d9f7aba350de2d6656hf04ncx
+
+{  
+    "state": "on"
+}
+
+### Получения заказов магазина
+GET http://localhost:8000/partner/orders
+Content-Type: application/json
+Authorization: Token 312we173f36a037d9f7aba350de2d6656hf04ncx
+
+### Обновление прайса
+POST  http://localhost:8000/partner/update
+Content-Type: application/json
+Authorization: Token 312we173f36a037d9f7aba350de2d6656hf04ncx
+
+{   
+    "url": "https://shop1.yaml"
+}

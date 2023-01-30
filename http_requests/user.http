@@ -1,0 +1,104 @@
+### Создание пользователя
+POST http://localhost:8000/user/register
+Content-Type: application/json
+
+{
+    "first_name": "Имя5",
+    "last_name": "Фамилия5",
+    "email": "test3@test.com",
+    "password":"1234567890qwerty",
+    "company":"Siemens",
+    "position":"Supervisor"
+}
+
+### Подтверждения емаил
+POST http://localhost:8000/user/register/confirm
+Content-Type: application/json
+
+{
+    "email": "test3@test.com",
+    "token":"sjp3134697ec18be5f183fe6d48022328362ae"
+}
+
+### Авторизация пользователя
+POST http://localhost:8000/user/login
+Content-Type: application/json
+
+{
+    "email": "test3@test.com",
+    "password":"1234567890qwerty"
+}
+
+
+### Получение контактов
+GET http://localhost:8000/user/contact
+Content-Type: application/json
+Authorization: Token sjp3134697ec18be5f183fe6d48022328362ae
+
+
+### Добавление контакта
+POST http://localhost:8000/user/contact
+Content-Type: application/json
+Authorization: Token sjp3134697ec18be5f183fe6d48022328362ae
+
+{
+    "city": "Город5",
+    "street": "Улица5",
+    "phone": "+0123456789"
+}
+
+### Редактирования контакта
+PUT  http://localhost:8000/user/contact
+Content-Type: application/json
+Authorization: Token sjp3134697ec18be5f183fe6d48022328362ae
+
+{   
+    "id": 9,
+    "city": "Город3",
+    "street": "Улица3",
+    "phone": "+1234567890"
+}
+
+### Удаление контакта
+DELETE   http://localhost:8000/user/contact
+Content-Type: application/json
+Authorization: Token sjp3134697ec18be5f183fe6d48022328362ae
+
+{   
+    "items": "3"
+}
+
+
+### Редактирования пользователя
+POST http://localhost:8000/user/details
+Content-Type: application/json
+Authorization: Token sjp3134697ec18be5f183fe6d48022328362ae
+
+{   
+    "email": "test7@test.com"
+}
+
+### Получение информации о пользователе
+GET http://localhost:8000/user/details
+Content-Type: application/json
+Authorization: Token sjp3134697ec18be5f183fe6d48022328362ae
+
+
+### Сброс пароля пользователя
+POST http://localhost:8000/user/password_reset
+Content-Type: application/json
+
+{
+"email": "test3@test.com"
+}
+
+
+### Подтверждения нового пароля пользователя
+POST http://localhost:8000/user/password_reset
+Content-Type: application/json
+
+{
+"email": "test3@test.com",
+"password": "newpassword123",
+"token": "2c86e8ca2f43590894942"
+}

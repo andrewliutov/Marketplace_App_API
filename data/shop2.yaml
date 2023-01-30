@@ -1,0 +1,16 @@
+shop: market
+categories:
+  - id: 1
+    name: Электроника
+
+goods:
+  - id: 5
+    category: 1
+    model: Huawei Matebook 16
+    name: Ноутбук
+    price: 110000
+    price_rrc: 116990
+    quantity: 14
+    parameters:
+      "Диагональ (дюйм)": 16
+

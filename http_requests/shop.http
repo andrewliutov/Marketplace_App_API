@@ -1,0 +1,78 @@
+### Список магазинов
+GET http://localhost:8000/api/v1/shops
+Content-Type: application/json
+
+
+### Список товаров
+GET http://localhost:8000/products
+Content-Type: application/json
+
+
+### Фильтрация товаров
+GET http://localhost:8000/products?shop_id=2&category_id=2
+Content-Type: application/json
+
+
+### Категории товаров
+GET http://localhost:8000/categories
+Content-Type: application/json
+
+
+### Добавить товары в корзину
+POST http://localhost:8000/basket
+Content-Type: application/json
+Authorization: Token qw34pfs01gd75v090971bb76e4fe028964482ff
+
+{
+    "items":[
+        {"product_info": 5, "quantity":50},
+        {"product_info": 1, "quantity":1}
+    ]
+}
+
+
+### Редакиторование количества товаров в корзине
+PUT http://localhost:8000/basket
+Content-Type: application/json
+Authorization: Token qw34pfs01gd75v090971bb76e4fe028964482ff
+
+{   
+    "items":[
+        {   
+            "id": 1,
+            "quantity": 10
+        }
+    ]
+}
+
+
+### Удаление товара из корзины
+DELETE  http://localhost:8000/basket
+Content-Type: application/json
+Authorization: Token qw34pfs01gd75v090971bb76e4fe028964482ff
+
+{   
+    "items": "2"
+}
+
+
+### Получение корзины
+GET http://localhost:8000/basket
+Content-Type: application/json
+Authorization: Token qw34pfs01gd75v090971bb76e4fe028964482ff
+
+
+### Размещения заказа
+POST  http://localhost:8000/order
+Content-Type: application/json
+Authorization: Token qw34pfs01gd75v090971bb76e4fe028964482ff
+
+{   
+    "id": "5",
+    "contact": "3"
+}
+
+### Получение заказов
+GET   http://localhost:8000/order
+Content-Type: application/json
+Authorization: Token qw34pfs01gd75v090971bb76e4fe028964482ff
