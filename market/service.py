@@ -34,7 +34,7 @@ def password_reset_token_created(sender, instance, reset_password_token, **kwarg
 
 def new_user_registered_signal(user_id, **kwargs):
     """
-    отправляем письмо с подтверждение почты при регистрации
+    отправляем письмо с подтверждением почты при регистрации
     """
     # send an e-mail to the user
     token, _ = ConfirmEmailToken.objects.get_or_create(user_id=user_id)
